@@ -45,6 +45,11 @@ The following extensions come enabled by default:
 - php7.0-sybase
 - php7.0-tidy
 - php7.0-xmlrpc
+- php-mongodb
+- php-redis
+- php-apcu
+- php-amqp
+- php-memcached
 
 ## nginx
 
