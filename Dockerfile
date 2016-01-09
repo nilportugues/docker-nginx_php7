@@ -38,7 +38,7 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get -y install snmp php7.0 \
     php7.0-xmlrpc
 
 RUN sudo pecl install mongodb
-RUN echo "extension=mongodb.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+RUN echo "extension=mongodb.so" >> `php7.0 --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
 
 RUN apt-get update && apt-get install -y python-software-properties
 RUN add-apt-repository ppa:nginx/stable
