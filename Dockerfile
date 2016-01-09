@@ -35,10 +35,20 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get -y install snmp php7.0 \
     php7.0-sqlite3  \
     php7.0-sybase  \
     php7.0-tidy  \
-    php7.0-xmlrpc
+    php7.0-xmlrpc \
+    openssl \
+    php-mongodb \
+    php-redis \
+    php-apcu \
+    php-amqp \
+    php-memcached
 
 RUN sudo pecl install mongodb
-RUN echo "extension=mongodb.so" >> `php7.0 --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+ADD 20-mongodb.ini /etc/php/7.0/cli/conf.d/20-mongodb.ini
+ADD 20-mongodb.ini /etc/php/7.0/phpdbg/conf.d/20-mongodb.ini
+ADD 20-mongodb.ini /etc/php/7.0/fpm/conf.d/20-mongodb.ini
+ADD 20-mongodb.ini /etc/php/7.0/cgi/conf.d/20-mongodb.ini
+RUN /etc/init.d/php7.0-fpm restart
 
 RUN apt-get update && apt-get install -y python-software-properties
 RUN add-apt-repository ppa:nginx/stable
