@@ -5,7 +5,7 @@ MAINTAINER Nil Portugués Calderó <contact@nilportugues.com>
 CMD ["/sbin/my_init"]
 
 RUN apt-get install -y language-pack-en-base
-RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php-7.0
+RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y install snmp php7.0 \
     php7.0-bz2  \
