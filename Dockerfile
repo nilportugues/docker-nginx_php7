@@ -7,35 +7,35 @@ CMD ["/sbin/my_init"]
 RUN apt-get install -y language-pack-en-base
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
-RUN apt-get -y update && apt-get -y upgrade && apt-get -y install snmp php7.0 \
-    php7.0-bz2  \
-    php7.0-cgi  \
-    php7.0-cli  \
-    php7.0-common  \
-    php7.0-curl  \
-    php7.0-dbg  \
-    php7.0-dev  \
-    php7.0-fpm  \
-    php7.0-gd  \
-    php7.0-imap  \
-    php7.0-interbase  \
-    php7.0-intl  \
-    php7.0-json  \
-    php7.0-ldap  \
-    php7.0-mcrypt  \
-    php7.0-mysql  \
-    php7.0-odbc  \
-    php7.0-opcache  \
-    php7.0-pgsql  \
-    php7.0-phpdbg  \
-    php7.0-pspell  \
-    php7.0-readline  \
-    php7.0-recode  \
-    php7.0-snmp  \
-    php7.0-sqlite3  \
-    php7.0-sybase  \
-    php7.0-tidy  \
-    php7.0-xmlrpc \
+RUN apt-get -y update && apt-get -y upgrade && apt-get -y install snmp php \
+    phpbz2  \
+    phpcgi  \
+    phpcli  \
+    phpcommon  \
+    phpcurl  \
+    phpdbg  \
+    phpdev  \
+    phpfpm  \
+    phpgd  \
+    phpimap  \
+    phpinterbase  \
+    phpintl  \
+    phpjson  \
+    phpldap  \
+    phpmcrypt  \
+    phpmysql  \
+    phpodbc  \
+    phpopcache  \
+    phppgsql  \
+    phpphpdbg  \
+    phppspell  \
+    phpreadline  \
+    phprecode  \
+    phpsnmp  \
+    phpsqlite3  \
+    phpsybase  \
+    phptidy  \
+    phpxmlrpc \
     openssl \
     php-mongodb \
     php-redis \
@@ -48,7 +48,7 @@ ADD 20-mongodb.ini /etc/php/7.0/cli/conf.d/20-mongodb.ini
 ADD 20-mongodb.ini /etc/php/7.0/phpdbg/conf.d/20-mongodb.ini
 ADD 20-mongodb.ini /etc/php/7.0/fpm/conf.d/20-mongodb.ini
 ADD 20-mongodb.ini /etc/php/7.0/cgi/conf.d/20-mongodb.ini
-RUN /etc/init.d/php7.0-fpm restart
+RUN /etc/init.d/phpfpm restart
 
 RUN apt-get update && apt-get install -y python-software-properties
 RUN add-apt-repository ppa:nginx/stable
