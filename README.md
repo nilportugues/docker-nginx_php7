@@ -1,6 +1,7 @@
 # nginx + PHP7 Docker
 [![Image Size](https://img.shields.io/imagelayers/image-size/nilportugues/nginx_php7/latest.svg)](https://imagelayers.io/?images=nilportugues/nginx_php7:latest)
 [![Docker Pulls](https://img.shields.io/docker/pulls/nilportugues/nginx_php7.svg)](https://hub.docker.com/r/nilportugues/nginx_php7/)
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://paypal.me/nilportugues)
 
 ## Building the container
 
