@@ -13,7 +13,6 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get -y install snmp php7.0 \
     php7.0-cli  \
     php7.0-common  \
     php7.0-curl  \
-    php7.0-dbg  \
     php7.0-dev  \
     php7.0-fpm  \
     php7.0-gd  \
@@ -26,7 +25,7 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get -y install snmp php7.0 \
     php7.0-mysql  \
     php7.0-odbc  \
     php7.0-opcache  \
-    php7.0-ppgsql  \
+    php7.0-pgsql  \
     php7.0-phpdbg  \
     php7.0-pspell  \
     php7.0-readline  \
