@@ -1,9 +1,9 @@
-FROM ubuntu:14.04
+FROM phusion/baseimage
 
 MAINTAINER Nil Portugués Calderó <contact@nilportugues.com>
 
-CMD ["/sbin/my_init"]
-
+RUN apt-get update
+RUN apt-get install -y python-software-properties
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y install snmp php7.0 \
@@ -46,9 +46,8 @@ ADD 20-mongodb.ini /etc/php/7.0/cli/conf.d/20-mongodb.ini
 ADD 20-mongodb.ini /etc/php/7.0/phpdbg/conf.d/20-mongodb.ini
 ADD 20-mongodb.ini /etc/php/7.0/fpm/conf.d/20-mongodb.ini
 ADD 20-mongodb.ini /etc/php/7.0/cgi/conf.d/20-mongodb.ini
-RUN /etc/init.d/phpfpm restart
+RUN /etc/init.d/php7.0-fpm restart
 
-RUN apt-get update && apt-get install -y python-software-properties
 RUN add-apt-repository ppa:nginx/stable
 RUN apt-get update && apt-get install -y nginx nginx-extras
 
